@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Webex Direct Linker</title>
+    <link rel="stylesheet" href="lib/bootstrap.min.css" />
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body class="bg-body text-body">
+    <main class="p-3 d-flex flex-column gap-3">
+      <header class="d-flex align-items-center gap-2">
+        <img src="icons/icon32.png" alt="" width="28" height="28" />
+        <div>
+          <h1 class="h6 mb-0">Webex Direct Linker</h1>
+          <small class="text-secondary" id="versionLabel">v0.0.0</small>
+        </div>
+      </header>
+
+      <section class="card border-0 bg-surface">
+        <div class="card-body p-3">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <span id="statusDot" class="status-dot status-dot--idle"></span>
+            <strong id="statusLabel">Checking current tab…</strong>
+          </div>
+          <p id="statusDetail" class="small text-secondary mb-0">
+            Open a Webex meeting link to see it here.
+          </p>
+          <button
+            id="launchBtn"
+            class="btn btn-accent w-100 mt-3 d-none"
+            type="button"
+          >
+            Launch in Desktop App
+          </button>
+        </div>
+      </section>
+
+      <section class="card border-0 bg-surface">
+        <div class="card-body p-3">
+          <div class="form-check form-switch d-flex align-items-center justify-content-between m-0">
+            <label class="form-check-label flex-grow-1" for="autoRedirectSwitch">
+              <span class="d-block fw-semibold">Always open in Desktop App</span>
+              <small class="text-secondary">
+                Skip the chooser and auto-launch the native client.
+              </small>
+            </label>
+            <input
+              class="form-check-input ms-3"
+              type="checkbox"
+              role="switch"
+              id="autoRedirectSwitch"
+            />
+          </div>
+          <hr class="my-3 opacity-25" />
+          <div class="form-check form-switch d-flex align-items-center justify-content-between m-0">
+            <label class="form-check-label flex-grow-1" for="showChooserSwitch">
+              <span class="d-block fw-semibold">Show fallback chooser</span>
+              <small class="text-secondary">
+                Recommended. Lets you stay in the browser if the app fails to open.
+              </small>
+            </label>
+            <input
+              class="form-check-input ms-3"
+              type="checkbox"
+              role="switch"
+              id="showChooserSwitch"
+            />
+          </div>
+        </div>
+      </section>
+
+      <footer class="d-flex gap-2">
+        <button id="reportBugBtn" class="btn btn-outline-light btn-sm flex-grow-1" type="button">
+          Report Bug
+        </button>
+        <button id="featureBtn" class="btn btn-outline-light btn-sm flex-grow-1" type="button">
+          Request Feature
+        </button>
+      </footer>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

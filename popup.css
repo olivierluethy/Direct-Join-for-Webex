@@ -1,0 +1,83 @@
+/*
+ * Webex Direct Linker popup overrides.
+ * Bootstrap 5 ships a solid dark theme via [data-bs-theme="dark"]; this file
+ * only tweaks surface colors and adds the Webex-teal accent.
+ */
+
+:root[data-bs-theme='dark'],
+html[data-bs-theme='dark'] body {
+  --bs-body-bg: #121212;
+  --bs-body-color: #f2f4f7;
+  --bs-body-secondary-color: #9aa0a6;
+  --wdl-surface: #1a1d21;
+  --wdl-surface-2: #242830;
+  --wdl-accent: #0b9ed5; /* Webex-blue */
+  --wdl-accent-hover: #0bb6c7; /* lean teal on hover */
+}
+
+html,
+body {
+  width: 340px;
+  min-height: 380px;
+  margin: 0;
+  font-size: 14px;
+}
+
+.bg-surface {
+  background-color: var(--wdl-surface) !important;
+}
+
+.btn-accent {
+  --bs-btn-color: #ffffff;
+  --bs-btn-bg: var(--wdl-accent);
+  --bs-btn-border-color: var(--wdl-accent);
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-hover-bg: var(--wdl-accent-hover);
+  --bs-btn-hover-border-color: var(--wdl-accent-hover);
+  --bs-btn-active-bg: var(--wdl-accent-hover);
+  --bs-btn-active-border-color: var(--wdl-accent-hover);
+  --bs-btn-focus-shadow-rgb: 11, 158, 213;
+  font-weight: 600;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--bs-secondary-color);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.04);
+}
+
+.status-dot--active {
+  background: #2ecc71;
+  box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.2);
+}
+
+.status-dot--idle {
+  background: #555c66;
+}
+
+.form-check-input:checked {
+  background-color: var(--wdl-accent);
+  border-color: var(--wdl-accent);
+}
+
+.form-check-input:focus {
+  border-color: var(--wdl-accent);
+  box-shadow: 0 0 0 0.2rem rgba(11, 158, 213, 0.25);
+}
+
+hr {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Remove Bootstrap's default focus glow on outlined footer buttons
+   so the popup feels compact. */
+.btn-outline-light {
+  --bs-btn-color: #e5e7eb;
+  --bs-btn-border-color: rgba(255, 255, 255, 0.18);
+  --bs-btn-hover-bg: rgba(255, 255, 255, 0.06);
+  --bs-btn-hover-border-color: rgba(255, 255, 255, 0.3);
+  --bs-btn-hover-color: #ffffff;
+}

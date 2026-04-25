@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Opening Webex Meeting…</title>
+    <link rel="stylesheet" href="lib/bootstrap.min.css" />
+    <link rel="stylesheet" href="popup.css" />
+    <style>
+      html,
+      body {
+        width: 100%;
+        min-height: 100vh;
+        margin: 0;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+      }
+      .intercept-card {
+        max-width: 520px;
+        width: 100%;
+        background: var(--wdl-surface);
+        border-radius: 14px;
+        padding: 2rem;
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+      }
+      .intercept-brand img {
+        width: 48px;
+        height: 48px;
+      }
+      .meeting-facts code {
+        background: rgba(255, 255, 255, 0.06);
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+      .warn {
+        background: rgba(255, 184, 0, 0.08);
+        border-left: 3px solid #ffb800;
+        padding: 0.75rem 1rem;
+        border-radius: 6px;
+        color: #f0e7c7;
+      }
+    </style>
+  </head>
+  <body class="bg-body text-body">
+    <main class="intercept-card">
+      <div class="intercept-brand d-flex align-items-center gap-3 mb-4">
+        <img src="icons/icon128.png" alt="" />
+        <div>
+          <h1 class="h4 m-0">Opening in Webex Desktop App</h1>
+          <small class="text-secondary">Webex Direct Linker</small>
+        </div>
+      </div>
+
+      <p class="mb-1" id="statusText">Launching the native Cisco Webex client…</p>
+      <p class="meeting-facts small text-secondary mb-4" id="meetingFacts"></p>
+
+      <div class="d-flex flex-column gap-2 mb-3">
+        <button id="relaunchBtn" class="btn btn-accent btn-lg" type="button">
+          Open in Desktop App
+        </button>
+        <button id="stayBrowserBtn" class="btn btn-outline-light" type="button">
+          Stay in Browser
+        </button>
+      </div>
+
+      <div class="warn small" id="browserWarn">
+        <strong>Heads up:</strong> The Webex web client is known to have
+        unstable audio, video, and frequent login loops. The Desktop App is
+        strongly recommended when available.
+      </div>
+
+      <details class="mt-4 text-secondary small">
+        <summary>Technical details</summary>
+        <p class="mt-2 mb-1">Protocol URI:</p>
+        <pre id="uriPreview" class="small mb-2"></pre>
+        <p class="mb-1">Original URL:</p>
+        <pre id="originalPreview" class="small mb-0"></pre>
+      </details>
+    </main>
+
+    <script src="intercept.js"></script>
+  </body>
+</html>

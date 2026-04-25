@@ -1,0 +1,46 @@
+{
+  "manifest_version": 3,
+  "name": "Direct Join for Webex: App Launcher & Audio Fix",
+  "version": "1.0.0",
+  "description": "Intercepts Webex meeting URLs and launches them directly in the Cisco Webex Desktop App, bypassing the sluggish web client.",
+  "author": "Webex Direct Linker",
+
+  "permissions": [
+    "webNavigation",
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "*://*.webex.com/*"
+  ],
+
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Webex Direct Linker",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png"
+    }
+  },
+
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+
+  "web_accessible_resources": [
+    {
+      "resources": ["intercept.html", "lib/*", "icons/*"],
+      "matches": ["*://*.webex.com/*"]
+    }
+  ],
+
+  "minimum_chrome_version": "102"
+}
