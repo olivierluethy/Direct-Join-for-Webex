@@ -1,4 +1,16 @@
-# Webex Direct Linker
+<div align="center">
+  <img src="icons/icon128.png" alt="Webex Direct Linker logo" width="140" />
+  <h1>Webex Direct Linker</h1>
+  <p><b>Open Webex meetings straight in the desktop app.</b><br/>A tiny, privacy-respecting Chrome extension that skips the sluggish web client.</p>
+  <p>
+    <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-blue.svg"></a>
+    <img alt="Chrome Extension MV3" src="https://img.shields.io/badge/Chrome%20Extension-MV3-4285F4?logo=googlechrome&logoColor=white">
+    <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black">
+    <img alt="Bootstrap 5" src="https://img.shields.io/badge/Bootstrap-5-7952B3?logo=bootstrap&logoColor=white">
+  </p>
+</div>
+
+---
 
 A tiny, privacy-respecting Chrome Extension (Manifest V3) that intercepts
 Webex meeting URLs and launches them directly in the **Cisco Webex Desktop
@@ -96,4 +108,9 @@ in your own artwork at `icons/icon{16,32,48,128}.png` to replace them.
 
 ## License
 
-MIT.
+Released under the [MIT License](LICENSE) © 2026 Olivier Lüthy. You're free to use, modify and distribute this
+software, including commercially, as long as the copyright notice and license are included.
+
+## Author
+
+Built by **Olivier Lüthy** — [GitHub](https://github.com/olivierluethy).
